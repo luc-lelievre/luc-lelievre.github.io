@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luc Lelièvre — Responsable Communication & Trade Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1C1B19;
+    --charcoal-2:#26241f;
+    --cream:#F4EFE4;
+    --copper:#C9743B;
+    --copper-bright:#E8934F;
+    --line:#3a372f;
+    --muted:#a89f8e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--charcoal);
+    color:var(--cream);
+    font-family:'Space Grotesk', sans-serif;
+    line-height:1.5;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+  }
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* --- Nav --- */
+  nav{
+    position:sticky;top:0;z-index:20;
+    background:rgba(28,27,25,0.9);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;}
+  .nav-name{font-family:'Fraunces',serif;font-size:19px;letter-spacing:0.02em;}
+  .nav-links{display:flex;gap:26px;font-size:14px;color:var(--muted);}
+  .nav-links a{text-decoration:none;transition:color .2s;}
+  .nav-links a:hover{color:var(--copper-bright);}
+
+  /* --- Hero --- */
+  header.hero{padding:96px 0 72px;position:relative;overflow:hidden;}
+  .eq{display:flex;align-items:flex-end;gap:5px;height:46px;margin-bottom:26px;}
+  .eq span{
+    display:block;width:6px;background:var(--copper);
+    border-radius:2px 2px 0 0;
+    animation:bounce 1.8s ease-in-out infinite;
+  }
+  .eq span:nth-child(1){height:18px;animation-delay:0s;}
+  .eq span:nth-child(2){height:38px;animation-delay:.15s;}
+  .eq span:nth-child(3){height:26px;animation-delay:.3s;}
+  .eq span:nth-child(4){height:44px;animation-delay:.45s;}
+  .eq span:nth-child(5){height:16px;animation-delay:.6s;}
+  .eq span:nth-child(6){height:32px;animation-delay:.75s;}
+  .eq span:nth-child(7){height:22px;animation-delay:.9s;}
+  @keyframes bounce{
+    0%,100%{transform:scaleY(0.55);}
+    50%{transform:scaleY(1);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .eq span{animation:none;}
+  }
+  h1.title{font-size:clamp(38px,6vw,58px);line-height:1.05;letter-spacing:-0.01em;}
+  h1.title em{color:var(--copper-bright);font-style:normal;}
+  .subtitle{margin-top:22px;font-size:18px;max-width:640px;color:#d9d2c2;}
+  .hero-meta{
+    margin-top:36px;display:flex;flex-wrap:wrap;gap:22px;
+    font-size:14px;color:var(--muted);
+  }
+  .hero-meta a{text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px;}
+  .hero-meta a:hover{color:var(--copper-bright);border-color:var(--copper-bright);}
+
+  /* --- Sections --- */
+  section{padding:64px 0;border-top:1px solid var(--line);}
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:0.14em;font-size:12px;
+    color:var(--copper-bright);margin-bottom:14px;font-weight:600;
+  }
+  section h2.section-title{font-size:30px;margin-bottom:32px;max-width:560px;}
+
+  /* --- Experience list --- */
+  .job{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);}
+  .job:last-child{border-bottom:none;}
+  .job .dates{color:var(--muted);font-size:13px;padding-top:3px;}
+  .job h3{font-size:19px;margin-bottom:4px;}
+  .job .company{color:var(--copper-bright);font-weight:500;}
+  .job ul{margin:10px 0 0;padding-left:18px;color:#cfc7b6;font-size:14.5px;}
+  .job li{margin-bottom:6px;}
+  @media (max-width:640px){
+    .job{grid-template-columns:1fr;gap:6px;}
+  }
+
+  /* --- Case studies --- */
+  .cases{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media (max-width:700px){.cases{grid-template-columns:1fr;}}
+  .case{
+    background:var(--charcoal-2);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+  }
+  .case .media{aspect-ratio:16/9;background:#000;}
+  .case .media iframe{width:100%;height:100%;border:0;display:block;}
+  .case .media.link-out{
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:13px;text-decoration:none;
+    background:linear-gradient(135deg,#2c2a24,#201f1b);
+  }
+  .case .media.link-out:hover{color:var(--copper-bright);}
+  .case .body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column;}
+  .case .tag{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--copper-bright);margin-bottom:8px;}
+  .case h3{font-size:17px;margin-bottom:8px;}
+  .case p{font-size:14px;color:#c9c1b0;margin:0 0 12px;flex:1;}
+  .case .result{
+    font-size:13.5px;font-weight:600;color:var(--cream);
+    border-top:1px solid var(--line);padding-top:12px;margin-top:auto;
+  }
+  .case .result span{color:var(--copper-bright);}
+  .case a.watch{
+    font-size:13px;color:var(--copper-bright);text-decoration:none;
+    display:inline-block;margin-top:12px;
+  }
+
+  /* --- Skills --- */
+  .skills{display:flex;flex-wrap:wrap;gap:10px;}
+  .pill{
+    border:1px solid var(--line);padding:8px 16px;border-radius:100px;
+    font-size:13.5px;color:#d9d2c2;
+  }
+
+  /* --- Footer / contact --- */
+  footer{padding:70px 0 60px;text-align:left;}
+  footer h2{font-size:32px;margin-bottom:14px;}
+  footer p{color:#c9c1b0;max-width:480px;}
+  .contact-row{margin-top:28px;display:flex;flex-wrap:wrap;gap:20px;font-size:15px;}
+  .contact-row a{text-decoration:none;border-bottom:1px solid var(--copper);color:var(--cream);}
+  .contact-row a:hover{color:var(--copper-bright);}
+  .fine{margin-top:56px;color:#5a5648;font-size:12.5px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Luc Lelièvre</div>
+    <div class="nav-links">
+      <a href="#experience">Expérience</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eq" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <h1 class="title">Responsable communication,<br><em>trade marketing</em> & vidéo.</h1>
+    <p class="subtitle">7 ans à faire vivre des marques audiovisuelles en ligne — stratégie de contenu, campagnes d'influence, production vidéo et animation de réseaux de plus de 30 partenaires.</p>
+    <div class="hero-meta">
+      <span>Villiers-sur-Marne (94) — Paris / Île-de-France</span>
+      <a href="mailto:luc.lelievre.catoire@gmail.com">luc.lelievre.catoire@gmail.com</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow">Parcours</div>
+    <h2 class="section-title">Du reportage terrain au pilotage de marque.</h2>
+
+    <div class="job">
+      <div class="dates">Depuis 2023</div>
+      <div>
+        <h3>Responsable Communication <span class="company">— Son Vidéo Distribution</span></h3>
+        <ul>
+          <li>Trade marketing pour plus de 30 marques partenaires, budget annuel &gt; 1,2 M€</li>
+          <li>Stratégie de communication externe et leviers online/offline</li>
+          <li>Création et pilotage du compte TikTok : 28 000 abonnés en 3 ans</li>
+          <li>Campagnes d'influence (10+ créateurs), jusqu'à 300 000 vues</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="dates">2020 – 2023</div>
+      <div>
+        <h3>Responsable Communication <span class="company">— Audio Marketing Services</span></h3>
+        <ul>
+          <li>Communication B2B pour un réseau de plus de 100 clients professionnels</li>
+          <li>Encadrement d'une équipe de 2 personnes</li>
+          <li>Animation du stand au salon Paris Audio Vidéo Show — 15 000+ visiteurs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="dates">2019 – 2020</div>
+      <div>
+        <h3>Chargé de Communication <span class="company">— Association diocésaine Saint-Denis</span></h3>
+        <ul>
+          <li>Réseaux sociaux, newsletter interne, journal départemental (10 000+ exemplaires/trimestre)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="dates">2018 – 2019</div>
+      <div>
+        <h3>Journaliste économique <span class="company">— DecideursTV (4Change)</span></h3>
+        <ul>
+          <li>25+ vidéos réalisées, 2 émissions mensuelles en direct</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="realisations">
+  <div class="wrap">
+    <div class="eyebrow">Réalisations</div>
+    <h2 class="section-title">Quelques projets qui parlent mieux qu'une liste de compétences.</h2>
+
+    <div class="cases">
+
+      <div class="case">
+        <div class="media">
+          <iframe src="https://www.youtube.com/embed/9p8CWEfTg4c" title="Comment choisir un ampli hi-fi" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="body">
+          <div class="tag">Vidéo · Présentateur</div>
+          <h3>Comment choisir un ampli hi-fi</h3>
+          <p>Écriture du script et présentation face caméra pour un contenu conseil d'achat.</p>
+          <div class="result">Rôle : <span>écriture + présentation</span></div>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="media">
+          <iframe src="https://www.youtube.com/embed/AJMaJLY65qQ" title="Émission en direct" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="body">
+          <div class="tag">Vidéo · Live</div>
+          <h3>Émission animée en direct</h3>
+          <p>Préparation du déroulé et animation en solo face caméra, avec interaction en temps réel.</p>
+          <div class="result">Format : <span>direct sur les réseaux</span></div>
+        </div>
+      </div>
+
+      <div class="case">
+        <a class="media link-out" href="https://www.instagram.com/reel/Da3BSNht2zh/" target="_blank" rel="noopener">Voir sur Instagram ↗</a>
+        <div class="body">
+          <div class="tag">Campagne d'influence</div>
+          <h3>Opération multi-plateformes</h3>
+          <p>Coordination de 10+ créateurs, déclinée sur Instagram, YouTube, TikTok, Facebook et son-video.com.</p>
+          <div class="result">Portée : <span>jusqu'à 300 000 vues</span></div>
+        </div>
+      </div>
+
+      <div class="case">
+        <a class="media link-out" href="https://www.tiktok.com/@sonvideocom" target="_blank" rel="noopener">Voir sur TikTok ↗</a>
+        <div class="body">
+          <div class="tag">Social media</div>
+          <h3>Lancement du compte TikTok Son-Vidéo.com</h3>
+          <p>Création du compte, ligne éditoriale et production régulière depuis son lancement.</p>
+          <div class="result"><span>28 000</span> abonnés en 3 ans</div>
+        </div>
+      </div>
+
+      <div class="case">
+        <a class="media link-out" href="https://blog.son-video.com/2023/07/retour-en-images-sur-japan-expo/" target="_blank" rel="noopener">Lire l'article ↗</a>
+        <div class="body">
+          <div class="tag">Rédaction</div>
+          <h3>Retour en images sur Japan Expo</h3>
+          <p>Couverture du stand Son-Vidéo.com (Dolby Atmos, 4K) aux côtés de Bowers & Wilkins, Marantz et Sony.</p>
+          <div class="result">Format : <span>reportage événementiel</span></div>
+        </div>
+      </div>
+
+      <div class="case">
+        <a class="media link-out" href="https://www.liberation.fr/checknews/2018/04/05/le-collectif-generation-precaire-est-il-toujours-actif_1653445/" target="_blank" rel="noopener">Lire l'article ↗</a>
+        <div class="body">
+          <div class="tag">Journalisme · CheckNews</div>
+          <h3>Enquête pour Libération</h3>
+          <p>Article de vérification des faits sur l'activité du collectif Génération Précaire.</p>
+          <div class="result">Publié dans <span>Libération</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Compétences</div>
+    <h2 class="section-title">Outils & savoir-faire.</h2>
+    <div class="skills">
+      <span class="pill">Trade marketing</span>
+      <span class="pill">Stratégie social media</span>
+      <span class="pill">Campagnes d'influence</span>
+      <span class="pill">Production vidéo</span>
+      <span class="pill">Relations publiques</span>
+      <span class="pill">Meta Business Suite</span>
+      <span class="pill">Suite Adobe</span>
+      <span class="pill">Canva</span>
+      <span class="pill">Notion</span>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h2>Discutons de votre prochain projet.</h2>
+    <p>Disponible pour un poste de responsable communication, trade marketing manager ou conseiller en communication, sur Paris / Île-de-France.</p>
+    <div class="contact-row">
+      <a href="mailto:luc.lelievre.catoire@gmail.com">luc.lelievre.catoire@gmail.com</a>
+      <a href="tel:+33680049823">06 80 04 98 23</a>
+      <a href="#" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+    <div class="fine">Luc Lelièvre — Villiers-sur-Marne (94)</div>
+  </div>
+</footer>
+
+</body>
+</html>
